@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Registration</title>
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <script>
+        function validateForm() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('passw').value;
+            let email = document.getElementById('email').value;
+            let address = document.getElementById('address').value;
+            let phone = document.getElementById('phone').value;
+
+            // Username validation
+            if (username.length < 3 || username.length > 20) {
+                alert("Username must be between 3 and 20 characters");
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            // Email validation
+            let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            // Address validation
+            if (address.length < 10) {
+                alert("Address must be at least 10 characters long");
+                return false;
+            }
+
+            // Phone number validation
+            let phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="register.php" method="POST">
+            <fieldset>
+                <table align="center">
+                    <tr>
+                        <td><label for="username">Username:</label></td>
+                        <td><input type="text" id="username" name="username" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="passw">Password:</label></td>
+                        <td><input type="password" id="passw" name="passw" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td><input type="address" id="address" name="address" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">PhoneNo:</label></td>
+                        <td><input type="phone" id="phone" name="phone" required></td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Register">
+                <input type="reset" value="Reset">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

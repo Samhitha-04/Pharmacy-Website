@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+            html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: url('bgg.avif') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white background to ensure readability */
+    border-radius: 10px; /* Rounded corners for better aesthetics */
+}
+
+h1 {
+    text-align: center;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    width: 25%;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background: white; /* Ensure product items have a solid background */
+    border-radius: 5px; /* Rounded corners for product items */
+}
+
+.product-image {
+    margin-bottom: 10px;
+    width: 100px; /* Fixed width for image container */
+    height: 100px; /* Fixed height for image container */
+    overflow: hidden; /* Hide any overflow to maintain consistency */
+}
+
+.product-image img {
+    width: 100%; /* Make the image fill its container */
+    height: 100%; /* Make the image fill its container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.product-info {
+    margin-bottom: 10px;
+    min-height: 100px; /* Set a minimum height for product info */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: space-between; /* Distribute space evenly between items */
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.rating {
+    color: gold;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.add-to-cart button {
+    background-color: #007bff; /* Blue background for Add to Cart button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart button:hover {
+    background-color: #0067cc; /* Darker blue on hover */
+}
+
+#back-btn {
+    background-color: #8a2be2; /* Violet background for Go Back button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#back-btn:hover {
+    background-color: #6a0dad; /* Darker violet on hover */
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>PRODUCT LIST</h1>
+        <ul class="product-list">
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="dolo-650.jpg" alt="Dolo 650 Tablet">
+                </div>
+                <div class="product-info">
+                    <h3>DOLO 650 TABLET</h3>
+                    <span class="rating">5.0</span>
+                    <p class="price">₹30.07</p>
+                </div>
+                <div class="add-to-cart">
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="DOLO 650 TABLET">
+                        <input type="hidden" name="price" value="30.07">
+                        <button type="submit">ADD TO CART</button>
+                    </form>
+                </div>
+            </li>
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="cold.jpg" alt="Coldact">
+                </div>
+                <div class="product-info">
+                    <h3>COLDACT</h3>
+                    <span class="rating">4.5</span>
+                    <p class="price">₹130.0</p>
+                </div>
+                <div class="add-to-cart">
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="COLDACT">
+                        <input type="hidden" name="price" value="130.0">
+                        <button type="submit">ADD TO CART</button>
+                    </form>
+                </div>
+            </li>
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="cofsils.webp" alt="Cofsils Lozenges">
+                </div>
+                <div class="product-info">
+                    <h3>COFSILS LOZENGES</h3>
+                    <span class="rating">4.5</span>
+                    <p class="price">₹35.0</p>
+                </div>
+                <div class="add-to-cart">
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="COFSILS LOZENGES">
+                        <input type="hidden" name="price" value="35.0">
+                        <button type="submit">ADD TO CART</button>
+                    </form>
+                </div>
+            </li>
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="Soframycin.webp" alt="Soframycin">
+                </div>
+                <div class="product-info">
+                    <h3>SOFRAMYCIN</h3>
+                    <span class="rating">5.0</span>
+                    <p class="price">₹54.00</p>
+                </div>
+                <div class="add-to-cart">
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="SOFRAMYCIN">
+                        <input type="hidden" name="price" value="54.0">
+                        <button type="submit">ADD TO CART</button>
+                    </form>
+                </div>
+            </li>
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="moov spary.webp" alt="Moov">
+                </div>
+                <div class="product-info">
+                    <h3>MOOV</h3>
+                    <span class="rating">4.5</span>
+                    <p class="price">₹150.0</p>
+                </div>
+                <div class="add-to-cart">
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="product_name" value="MOOV">
+                        <input type="hidden" name="price" value="150.0">
+                        <button type="submit">ADD TO CART</button>
+                    </form>
+                </div>
+            </li>
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="Zandu Balm.webp" alt="Zandu Balm" >
+                </div>
+                <div class="product-info">
+                    <h3>ZANDU BALM</h3>
+                    <span class="rating">5.0</span>
+                    <p class="price">₹100.0</p>
+                    <div class="add-to-cart">
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="product_name" value="ZANDU BALM">
+                            <input type="hidden" name="price" value="100.0">
+                            <button type="submit">ADD TO CART</button>
+                        </form>
+                    </div>
+            </li>
+        </ul>
+    <button id="back-btn" onclick="history.back()">Go Back</button>
+    </div>
+    <script>
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+addToCartButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Simulate adding the product to the cart (replace with your actual logic)
+    alert('"' + button.parentNode.querySelector('h3').textContent + '" has been added to your cart!');
+  });
+});
+const backButton = document.getElementById('back-btn');
+
+backButton.addEventListener('click', () => {
+  window.history.back();
+});
+    </script>
+</body>
+</html>
+            

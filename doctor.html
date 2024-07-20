@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment System</title>
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  background: url('bgg.avif') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 60%;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input, select, button {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #842188;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #842188;
+}
+
+#appointmentDetails {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}
+
+#back-btn {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Add other styles for appearance as desired */
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book a Doctor Appointment</h1>
+        <form id="appointmentForm" action="appointment_handler.php" method="POST">
+            <label for="patientName">Patient Name:</label>
+            <input type="text" id="patientName" name="patientName" required>
+
+            <label for="doctor">Choose Doctor:</label>
+            <select id="doctor" name="doctor" required>
+                <option value="Dr. Chirra Bhakthavatsala Reddy (Cardiologists)">Dr. Chirra Bhakthavatsala Reddy (Cardiologists)</option>
+                <option value="Dr. Vivekananda Reddy (Orthopedist)">Dr. Vivekananda Reddy (Orthopedist)</option>
+                <option value="Dr. Chakravarthy A K (Nephrologist)">Dr. Chakravarthy A K (Nephrologist)</option>
+                <option value="Dr. Bindu Menon (Neurologist)">Dr. Bindu Menon (Neurologist)</option>
+                <option value="Dr. Rupa (Pediatrician)">Dr. Rupa (Pediatrician)</option>
+                <option value="Dr. A Veeramma (Gynecologist)">Dr. A Veeramma (Gynecologist)</option>
+            </select>
+
+            <label for="appointmentDate">Date:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+            <label for="appointmentTime">Time:</label>
+            <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+        <button onclick="history.back()">Go Back</button>
+    </div>
+    <script>
+        function displayAppointmentDetails() {
+  var patientName = document.getElementById("patientName").value;
+  var doctor = document.getElementById("doctor").value;
+  var appointmentDate = document.getElementById("appointmentDate").value;
+  var appointmentTime = document.getElementById("appointmentTime").value;
+
+  var appointmentDetails = "Patient Name: " + patientName + "<br>" +
+                           "Doctor: " + doctor + "<br>" +
+                           "Date: " + appointmentDate + "<br>" +
+                           "Time: " + appointmentTime;
+
+  document.getElementById("appointmentDetails").innerHTML = appointmentDetails;
+}
+    </script>
+</body>
+</html>
